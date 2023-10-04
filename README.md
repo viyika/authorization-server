@@ -1,0 +1,3 @@
+- [Reference-0](https://docs.spring.io/spring-security/site/docs/5.2.12.RELEASE/reference/html/webflux-oauth2.html#webflux-oauth2-login-sample-config)
+- [Reference-1](https://docs.spring.io/spring-security/site/docs/5.2.12.RELEASE/reference/html/webflux-oauth2.html#webflux-oauth2-login-sample-config)
+- [Reference-2](https://spring.io/blog/2023/05/24/spring-authorization-server-is-on-spring-initializr)
