@@ -6,28 +6,9 @@ spring:
     oauth2:
       authorizationserver:
         client:
-          oidc-client:
+          api-client:
             registration:
-              client-id: "oidc-client"
-              client-secret: "{noop}secret"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-                - "refresh_token"
-              redirect-uris:
-                - "http://127.0.0.1:8080/login/oauth2/code/oidc-client"
-              post-logout-redirect-uris:
-                - "http://127.0.0.1:8080/"
-              scopes:
-                - "openid"
-                - "profile"
-            require-authorization-consent: true
-            token:
-              access-token-time-to-live: 30s
-          client-1:
-            registration:
-              client-id: "client"
+              client-id: "re-commerce-api"
               client-secret: "{bcrypt}$2a$10$jdJGhzsiIqYFpjJiYWMl/eKDOd8vdyQis2aynmFN0dgJ53XvpzzwC"
               client-authentication-methods: "client_secret_basic"
               authorization-grant-types:
@@ -41,4 +22,19 @@ spring:
                 - "user.read"
                 - "user.write"
                 - "openid"
-
+          spa-client:
+            registration:
+              client-id: "spa-client"
+              client-authentication-methods:
+                - "none"
+              authorization-grant-types:
+                - "authorization_code"
+              redirect-uris:
+                - "${SPA_REDIRECT_URI:http://localhost:3000/callback}"
+              scopes:
+                - "openid"
+                - "profile"
+            require-authorization-consent: true
+            require-proof-key: true
+            token:
+              access-token-time-to-live: 1h
