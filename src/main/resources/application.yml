@@ -1,3 +1,6 @@
+logging:
+  level:
+    org.springframework.security: trace
 spring:
   docker:
     compose:
@@ -8,7 +11,7 @@ spring:
         client:
           api-client:
             registration:
-              client-id: "re-commerce-api"
+              client-id: "api-client"
               client-secret: "{bcrypt}$2a$10$jdJGhzsiIqYFpjJiYWMl/eKDOd8vdyQis2aynmFN0dgJ53XvpzzwC"
               client-authentication-methods: "client_secret_basic"
               authorization-grant-types:

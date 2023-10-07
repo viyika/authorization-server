@@ -23,6 +23,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @SpringBootApplication
+//@EnableWebSecurity
 public class AuthorizationServerApplication {
 
 	public static void main(String[] args) {
@@ -78,7 +79,7 @@ class SecurityConfig {
 		CorsConfiguration config = new CorsConfiguration();
 		config.addAllowedHeader("*");
 		config.addAllowedMethod("*");
-		config.addAllowedOrigin("*");
+		config.addAllowedOrigin("http://localhost:3000");
 		config.setAllowCredentials(true);
 		source.registerCorsConfiguration("/**", config);
 		return source;
